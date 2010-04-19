@@ -1,6 +1,6 @@
 module XMPP4EM
   class NotConnected < Exception; end
-
+VERSION='0.2.0'
   autoload :ClientConnection, 'xmpp4em/client_connection'
   autoload :Client, 'xmpp4em/client'
   autoload :BaseClient, 'xmpp4em/base_client'  

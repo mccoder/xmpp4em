@@ -1,0 +1,6 @@
+== 0.2.0 / 2010-04-19
+
+	Added new Component connection.
+	Made base classes for Client, Component and connections.
+	Added class Lazy Loading. 
+	Add Credits.	
