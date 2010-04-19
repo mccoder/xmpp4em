@@ -29,10 +29,14 @@ module XMPP4EM
     
     include EventMachine::XmlPushParser
     
+    def encode2utf8(text)
+      text.respond_to?(:force_encoding) ? text.force_encoding("utf-8") : text
+    end
+    
     def start_element name, attrs
       e = REXML::Element.new(name)
       attrs.each { |name, value|
-        e.add_attribute(name, value.encode2utf8)
+        e.add_attribute(name, encode2utf8(value))
       }
       
       @current = @current.nil? ? e : @current.add_element(e)
@@ -58,7 +62,7 @@ module XMPP4EM
     end
     
     def characters text
-      @current.text = @current.text.to_s + text.encode2utf8 if @current
+      @current.text = @current.text.to_s + encode2utf8(text) if @current
     end
     
     def error *args

@@ -20,15 +20,15 @@ module XMPP4EM
     end
     
     def connect host = jid.domain, port = 5222
-      #if host=='localhost' || host=='127.0.0.1' || %r{^([0-9]{1,3}.){3}[0-9]{1,3}$}.match(host)
+      if host=='localhost' || host=='127.0.0.1' || %r{^([0-9]{1,3}.){3}[0-9]{1,3}$}.match(host)
         target_host, target_port= host, port
-      #else
-       # target_host, target_port = resolve_host(host)
-      #end
+      else
+        target_host, target_port = resolve_host(host)
+      end
       EM.connect target_host, target_port, ClientConnection, jid.domain, port do |conn|
         @connection = conn
         conn.client = self
-	conn.logger=@logger
+        conn.logger=@logger
       end
     end   
     

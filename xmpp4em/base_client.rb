@@ -74,9 +74,7 @@ module XMPP4EM
         @id_callbacks[ data.id ] = blk
       end
       if safe
-        callback {  
-          @connection.send(data)
-        }
+        callback {   @connection.send(data) }
       else
         @connection.send(data)
       end
