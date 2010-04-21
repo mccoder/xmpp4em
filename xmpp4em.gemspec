@@ -22,5 +22,5 @@ Gem::Specification.new do |s|
   s.required_ruby_version = ::Gem::Requirement.new("~> 1.9")
   s.add_dependency('eventmachine', '>=0.12.10')
   s.add_dependency('xmpp4r', '>=0.5')
-  s.add_dependency('evma_xmlpushparser', '>=0.0.1')
+#  s.add_dependency('evma_xmlpushparser', '>=0.0.1')
 end
