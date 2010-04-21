@@ -9,11 +9,12 @@ Gem::Specification.new do |s|
   s.version = XMPP4EM::VERSION
   s.authors = ['Aman Gupta', 'Kokorin Denis']
   s.homepage = "http://github.com/mccoder/xmpp4em"
-  s.summary = "EventMachine based XMPP client"
+  s.summary = "EventMachine based XMPP client and component"
+  s.description="Simple XMPP client and component built on EventMachine."
   s.email = Base64.decode64("bWNjb2Rlci1ub3NwYW1AeWEucnU=")
 
   # files
-  s.files = ['README', 'Rakefile', 'History.txt'] + Dir["lib/**/*.rb"]
+  s.files = ['README.md', 'Rakefile', 'History.txt'] + Dir["lib/**/*.rb"] + Dir["examples/**/*.rb"]+Dir["spec/**/*.rb"]
     
   s.require_paths = ["lib"]
 
